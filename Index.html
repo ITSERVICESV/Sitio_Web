@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Síguenos en Facebook</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #800020;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 400px;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        .btn {
+            display: block;
+            text-decoration: none;
+            background: #800020;
+            color: #fff;
+            padding: 14px;
+            margin: 12px 0;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #bf141d;
+        }
+
+        .disabled {
+            background: #ccc;
+            color: #666;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <div class="logo">📘</div>
+
+    <h1>
+        Para más información sobre nuestros programas,<br>
+        visita nuestras páginas en orden
+    </h1>
+
+    <a id="fb1" class="btn" href="https://www.facebook.com/share/17pVL69dvH/?mibextid=wwXIfr" target="_blank">
+        Pagina Oficial Prisco
+    </a>
+
+    <a id="fb2" class="btn disabled" href="https://www.facebook.com/share/1DnZUvHgNK/?mibextid=wwXIfr" target="_blank">
+        Página Marca Hecho en Pueblos Indígenas 🔒
+    </a>
+
+    <a id="fb3" class="btn disabled" href="https://www.facebook.com/share/15URdSqdUq/?mibextid=wwXIfr" target="_blank">
+        Página oficial CEDSPI 🔒
+    </a>
+
+    <div class="footer">
+        © CEDSPI
+    </div>
+</div>
+
+<script>
+    let paso1 = false;
+    let paso2 = false;
+
+    const fb1 = document.getElementById("fb1");
+    const fb2 = document.getElementById("fb2");
+    const fb3 = document.getElementById("fb3");
+
+    fb1.addEventListener("click", () => {
+        paso1 = true;
+        fb2.classList.remove("disabled");
+        fb2.textContent = "Página Marca Hecho en Pueblos Indígenas";
+    });
+
+    fb2.addEventListener("click", (e) => {
+        if (!paso1) {
+            e.preventDefault();
+            alert("⚠️ Primero debes visitar la Pagina Oficial Prisco");
+        } else {
+            paso2 = true;
+            fb3.classList.remove("disabled");
+            fb3.textContent = "Página oficial CEDSPI";
+        }
+    });
+
+    fb3.addEventListener("click", (e) => {
+        if (!paso2) {
+            e.preventDefault();
+            alert("⚠️ Debes visitar Página Marca Hecho en Pueblos Indígenas antes de continuar");
+        }
+    });
+</script>
+
+</body>
+</html>
