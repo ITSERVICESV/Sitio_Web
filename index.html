@@ -10,6 +10,17 @@
 
 <style>
 
+/* para  centrar*/    
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+}
+
 /* ===== FONDO ===== */
 body{
     margin:0;
@@ -22,21 +33,23 @@ body{
     display:flex;
     justify-content:center;
     align-items:flex-start;  
-    padding-top:120px;   
+    padding-top:20px 0;   
    
 }
 
 /* ===== CAJA BLANCA ===== */
 .card{
     background: #ffffff;
-            width: 100%;
+            width: 92%;
             max-width: 800px;
-            padding: 50px 30px;
+            padding: 40px 20px;
+            margin:0 auto;
             border-radius: 35px;
             text-align: center;
             box-shadow:0 30px 60px rgba(0,0,0,0.4);
             animation:entrada .8s ease;
 }           
+
 
 
 /* Animación elegante */
@@ -189,7 +202,10 @@ h1{
     color:#6b0f2b;
 }
 
-
+ /*Centrar  */
+button{
+    width:100%;
+}  
 
 </style>
 </head>
