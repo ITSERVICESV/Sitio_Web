@@ -1,131 +1,401 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Síguenos en Facebook</title>
+<meta charset="UTF-8">
+<meta name="theme-color" content="#800020">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preload" as="image" href="DiseñoFondoQRpag1.png">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #800020;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+<title>Visita nuestras páginas</title>
 
-        .card {
-            background: #ffffff;
+<style>
+
+/* ===== FONDO ===== */
+body{
+    margin:0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height:100vh;
+    background:
+      /*  linear-gradient(rgba(128,0,32,0.85), rgba(128,0,32,0.85)),*/
+        url("DiseñoFondoQRpag1.png") center / cover no-repeat;
+   
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;  
+    padding-top:120px;   
+   
+}
+
+/* ===== CAJA BLANCA ===== */
+.card{
+    background: #ffffff;
             width: 100%;
-            max-width: 400px;
-            padding: 30px 20px;
-            border-radius: 15px;
+            max-width: 800px;
+            padding: 50px 30px;
+            border-radius: 35px;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
+            box-shadow:0 30px 60px rgba(0,0,0,0.4);
+            animation:entrada .8s ease;
+}           
 
-        .logo {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
 
-        h1 {
-            font-size: 20px;
-            margin-bottom: 25px;
-            color: #333;
-        }
+/* Animación elegante */
+@keyframes entrada{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+/* ===== FLOR ===== */
+.logo img{
+    width:120px;
+    margin-bottom:25px;
+}
 
-        .btn {
-            display: block;
-            text-decoration: none;
-            background: #800020;
-            color: #fff;
-            padding: 14px;
-            margin: 12px 0;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            transition: background 0.3s ease;
-            cursor: pointer;
-        }
+/* ===== TITULO ===== */
+h1{
+    color:#6b0f2b;
+    font-size:26px;
+    font-weight:900;
+    margin-bottom:40px;
+    line-height:1.4;
+}
 
-        .btn:hover {
-            background: #bf141d;
-        }
 
-        .disabled {
-            background: #ccc;
-            color: #666;
-        }
+/* ===== TITULO FORMATEADO ===== */
 
-        .footer {
-            margin-top: 20px;
-            font-size: 12px;
-            color: #777;
-        }
-    </style>
+h1{
+    font-size:26px;
+    font-weight:900;
+    margin-bottom:40px;
+    line-height:1.4;
+    text-transform: uppercase;
+}
+
+.vino{
+    color:#b80f41;
+}
+
+.dorado{
+    color:#c9a646;
+}
+
+
+/* ===== BOTONES ===== */
+.btn{
+    display:block;
+    text-decoration:none;
+    background:#d8c4a3;
+    color:#6b0f2b;
+    padding:20px;
+    margin:25px auto;
+    border-radius:25px;
+    font-size:22px;
+    font-weight:900;
+    max-width:700px;
+    box-shadow:0 12px 25px rgba(0,0,0,0.25);
+    transition: all .3s ease;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 35px rgba(0,0,0,0.35);
+}
+
+/* ===== DESHABILITADO ===== */
+.disabled{
+    background:#cccccc;
+    color:#777;
+    opacity:.7;
+    cursor:not-allowed;
+}
+
+/* ===== MODAL ===== */
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+    padding: 20px; /* evita que toque los bordes en celular */
+}
+
+
+.modal-content{
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    width:100%;
+    max-width:350px;
+    text-align:center;
+    box-shadow:0 20px 40px rgba(0,0,0,0.3);
+    animation:zoomIn .3s ease;
+}
+
+.modal-content h2{
+    color:#800020;
+}
+
+.modal-content button{
+    background:#800020;
+    color:#fff;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+ html {
+    overflow-y: scroll;
+}
+
+@media (max-width: 768px){
+
+body{
+        background-position: top center;
+        background-size: contain;
+        background-color:#800020;
+        padding-top:80px;
+    }
+
+.card{
+    padding:35px 20px;
+    border-radius:25px;
+}
+
+h1{
+    font-size:18px;
+}
+
+.btn{
+    font-size:16px;
+    padding:16px;
+}
+
+.header-logos{
+    padding-top:20px;
+}
+}
+
+.contador{
+    margin-top:20px;
+    font-weight:600;
+    color:#6b0f2b;
+}
+
+
+
+</style>
 </head>
 
 <body>
 
+<!-- 
+<div class="header-logos">
+    <img src="logos.png" alt="Logos Hidalgo y Pueblos Indígenas">
+</div>   -->
+
+<div class="container">
 <div class="card">
-    <div class="logo">📘</div>
+<div class="logo">
+   <img src="flor.png" alt="Flor institucional" width="120" loading="lazy">
+</div>
 
-    <h1>
-        Para más información sobre nuestros programas,<br>
-        visita nuestras páginas en orden
-    </h1>
+<h1>
+PARA <span class="dorado">MÁS INFORMACIÓN</span> SOBRE NUESTROS PROGRAMAS,<br>
+VISITA NUESTRAS PÁGINAS<span class="vino"> EN ORDEN.</span>
+</h1>
 
-    <a id="fb1" class="btn" href="https://www.facebook.com/share/17pVL69dvH/?mibextid=wwXIfr" target="_blank">
-        Pagina Oficial Prisco
-    </a>
+<!-- <h1>
+PARA MÁS INFORMACIÓN SOBRE NUESTROS PROGRAMAS,<br>
+VISITA NUESTRAS PÁGINAS EN ORDEN.
+</h1>*/ -->
 
-    <a id="fb2" class="btn disabled" href="https://www.facebook.com/share/1DnZUvHgNK/?mibextid=wwXIfr" target="_blank">
-        Página Marca Hecho en Pueblos Indígenas 🔒
-    </a>
+<a id="fb1" class="btn" href="https://www.facebook.com/share/17pVL69dvH/?mibextid=wwXIfr" target="_blank">
+PÁGINA FB PRISCO MANUEL
+</a>
 
-    <a id="fb3" class="btn disabled" href="https://www.facebook.com/share/15URdSqdUq/?mibextid=wwXIfr" target="_blank">
-        Página oficial CEDSPI 🔒
-    </a>
+<a id="fb2" class="btn disabled" href="https://www.facebook.com/share/1DnZUvHgNK/?mibextid=wwXIfr" target="_blank">
+PÁGINA FB HECHO EN PUEBLOS INDÍGENAS 🔒
+</a>
 
-    <div class="footer">
-        © CEDSPI
-    </div>
+<a id="fb3" class="btn disabled" href="https://www.facebook.com/share/15URdSqdUq/?mibextid=wwXIfr" target="_blank">
+PÁGINA FB DE LA CEDSPI 🔒
+</a>
+
+<a id="fb4" class="btn disabled" href="https://cedspi.hidalgo.gob.mx" target="_blank">
+PÁGINA WEB OFICIAL DE LA CEDSPI 🔒
+</a>
+
+
+<div id="panelContadores" style="display:none;">
+
+    <p class="contador">
+        Visitas: <span id="contadorVisitas">0</span>
+    </p>
+
+    <p class="contador-boton">
+        FB1 Clics: <span id="countFb1">0</span>
+    </p>
+
+    <p class="contador-boton">
+        FB2 Clics: <span id="countFb2">0</span>
+    </p>
+
+    <p class="contador-boton">
+        FB3 Clics: <span id="countFb3">0</span>
+    </p>
+
+    <p class="contador-boton">
+        FB4 Clics: <span id="countFb4">0</span>
+    </p>
+
+</div>
+
+</div>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h2>⚠️ Atención</h2>
+    <p id="modal-text"></p>
+    <button onclick="cerrarModal()">Aceptar</button>
+  </div>
 </div>
 
 <script>
+
+
     let paso1 = false;
     let paso2 = false;
+    let paso3 = false;
 
     const fb1 = document.getElementById("fb1");
     const fb2 = document.getElementById("fb2");
     const fb3 = document.getElementById("fb3");
+    const fb4 = document.getElementById("fb4");
+
+    cargarContador("fb1", "countFb1");
+    cargarContador("fb2", "countFb2");
+    cargarContador("fb3", "countFb3");
+    cargarContador("fb4", "countFb4");
+
 
     fb1.addEventListener("click", () => {
         paso1 = true;
         fb2.classList.remove("disabled");
-        fb2.textContent = "Página Marca Hecho en Pueblos Indígenas";
+        fb2.textContent = "PÁGINA FB HECHO EN PUEBLOS INDÍGENAS";
+        
+        sumarClick("fb1", "countFb1");
     });
 
     fb2.addEventListener("click", (e) => {
-        if (!paso1) {
+        if(!paso1){
             e.preventDefault();
-            alert("⚠️ Primero debes visitar la Pagina Oficial Prisco");
-        } else {
+            mostrarModal("Te invitamos a dar LIKE a la Página FB Prisco Manuel.");
+        }else{
             paso2 = true;
             fb3.classList.remove("disabled");
-            fb3.textContent = "Página oficial CEDSPI";
+            fb3.textContent = "PÁGINA FB DE LA CEDSPI";
+            sumarClick("fb2", "countFb2");
         }
     });
 
     fb3.addEventListener("click", (e) => {
-        if (!paso2) {
+        if(!paso2){
             e.preventDefault();
-            alert("⚠️ Debes visitar Página Marca Hecho en Pueblos Indígenas antes de continuar");
+            mostrarModal("Te invitamos a dar LIKE a la Página FB Hecho en Pueblos Indígenas.");
+        }else{
+            paso3 = true;
+            fb4.classList.remove("disabled");
+            fb4.textContent = "PÁGINA WEB OFICIAL DE LA CEDSPI";
+            sumarClick("fb3", "countFb3");
+
+
         }
     });
+
+    fb4.addEventListener("click", (e) => {
+        if(!paso3){
+            e.preventDefault();
+            mostrarModal("Te invitamos a dar LIKE a la Página FB De La Cedspi.");
+        }
+
+        sumarClick("fb4", "countFb4");
+    });
+
+    // 🔥 CONTADOR
+    const urlBase = "https://api.counterapi.dev/v1/cedspiQR/visitas";
+    const yaContado = localStorage.getItem("yaContado");
+
+    if (!yaContado) {
+        fetch(urlBase + "/up")
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById("contadorVisitas").textContent = data.count;
+                localStorage.setItem("yaContado", "true");
+            });
+    } else {
+        fetch(urlBase)
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById("contadorVisitas").textContent = data.count;
+            });
+    }
+
+
+
+function cargarContador(clave, idElemento){
+    fetch(`https://api.counterapi.dev/v1/cedspiQR/${clave}`)
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById(idElemento).textContent = data.count;
+        });
+}
+
+function sumarClick(clave, idElemento){
+    fetch(`https://api.counterapi.dev/v1/cedspiQR/${clave}/up`)
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById(idElemento).textContent = data.count;
+        });
+}
+
+
+
+document.addEventListener("keydown", function(e){
+
+    if(e.key === "v" || e.key === "V"){
+
+        const panel = document.getElementById("panelContadores");
+
+        if(panel.style.display === "none"){
+            panel.style.display = "block";
+        } else {
+            panel.style.display = "none";
+        }
+
+    }
+
+});
+
+function mostrarModal(texto){
+    document.getElementById("modal-text").textContent = texto;
+    document.getElementById("modal").style.display = "flex";
+}
+
+function cerrarModal(){
+    document.getElementById("modal").style.display = "none";
+}
+
+
 </script>
 
 </body>
